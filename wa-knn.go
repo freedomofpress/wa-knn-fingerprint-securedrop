@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"log"
 	"math"
 	"math/rand"
 	"os"
@@ -15,6 +16,7 @@ func main() {
 	data.`)
 	predictProbaFlag := flag.Bool("predict-proba", false, `Predict testing data
 	class labels using weight slice.`)
+	flag.Parse()
 	dec := json.NewDecoder(os.Stdin)
 	enc := json.NewEncoder(os.Stdout)
 
@@ -23,6 +25,8 @@ func main() {
 		result = fit(dec)
 	} else if *predictProbaFlag {
 		result = predictProba(dec)
+	} else {
+		log.Fatalf("You must specify either the --predict-proba or --fit flag.")
 	}
 
 	enc.Encode(&result)
