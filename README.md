@@ -11,7 +11,7 @@ distinguishing between "monitored" and "non-monitored" classes for now).
 Based somewhat on https://github.com/pylls/go-knn and also [Wang's original CPP
 implementation](https://crysp.uwaterloo.ca/software/webfingerprint/knn.zip),
 herein we have implemented a JSON Interface in order to enable interop with
-https://github.com/fingerprint-securedrop. See the
+https://github.com/freedomofpress/fingerprint-securedrop. See the
 [`integrate-wa-knn`](https://github.com/freedomofpress/fingerprint-securedrop/tree/integrate-wa-knn)
 branch for corresponding work there. This version also fixes a couple bugs in
 former implementations:
